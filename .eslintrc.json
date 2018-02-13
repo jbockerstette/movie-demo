@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "plugins": ["prettier", "html"],
+  "settings": {
+    "html/report-bad-indent": "error",
+    "html/html-extensions": [".html"],
+    "html/indent": "+2"
+  },
+  "rules": {
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "no-undef": "off",
+    "prettier/prettier": ["error", { "singleQuote": true }]
+  }
+}

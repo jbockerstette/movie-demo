@@ -1,8 +1,13 @@
 {
   "name": "star-wars-demo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Star Wars api demo",
+  "repository": {
+    "url": "https://github.com/jbockerstette/star-wars-demo.git"
+  },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1"

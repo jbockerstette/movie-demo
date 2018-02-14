@@ -1,10 +1,18 @@
-.navbar {
-  text-align: center;
-  background-color: #222;
-  padding: 5px;
-  color: white;
-}
-
 .navbar-title {
   font-size: 1em;
+}
+
+header,
+footer {
+  grid-column: 1 / 4;
+}
+
+header,
+footer {
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
 }

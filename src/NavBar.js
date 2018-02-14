@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './NavBar.css';
 
 const NavBar = props => (
-  <header className="navbar">
+  <header>
     <h1 className="navbar-title">{props.title}</h1>
   </header>
 );

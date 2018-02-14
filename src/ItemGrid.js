@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 import './ItemGrid.css';
 
-class ItemGrid extends Component {
-  render() {
-    const { items, config } = this.props;
-    console.log(config);
-    return (
-      <div className="grid">
-        {items.map(item => (
-          <Item
-            key={item.title}
-            baseUrl={config.base_url}
-            size={config.poster_sizes[0]}
-            path={item.poster_path}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const ItemGrid = props => {
+  const { items, config } = props;
+  console.log(config);
+  return (
+    <div className="grid">
+      {items.map(item => (
+        <Item
+          key={item.title}
+          baseUrl={config.base_url}
+          size={config.poster_sizes[0]}
+          path={item.poster_path}
+        />
+      ))}
+    </div>
+  );
+};
 // backdrop
 // http://image.tmdb.org/t/p/w300/qLmdjn2fv0FV2Mh4NBzMArdA0Uu.jpg
 // poster

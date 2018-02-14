@@ -7,6 +7,8 @@
     "html/indent": "+2"
   },
   "rules": {
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",

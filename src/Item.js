@@ -7,7 +7,9 @@ const Item = props => {
   const src = `${baseUrl}${size}/${path}`;
   return (
     <div className="item">
-      <img src={src} alt="" srcSet="" />
+      <button className="btn-raised">
+        <img src={src} alt="" srcSet="" />
+      </button>
     </div>
   );
 };

@@ -2,9 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Item.css';
 
-const Item = props => <div className="item">{props.item.title}</div>;
+const Item = props => {
+  const { baseUrl, path, size } = props;
+  const src = `${baseUrl}${size}/${path}`;
+  return (
+    <div className="item">
+      <img src={src} alt="" srcSet="" />
+    </div>
+  );
+};
+
+Item.defaultProps = {
+  baseUrl: '',
+  size: '',
+  path: ''
+};
+
 Item.propTypes = {
-  item: PropTypes.shape({ title: PropTypes.string }).isRequired
+  baseUrl: PropTypes.string,
+  size: PropTypes.string,
+  path: PropTypes.string
 };
 
 export default Item;

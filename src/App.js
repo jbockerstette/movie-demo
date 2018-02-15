@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
-import ItemGrid from './ItemGrid';
+import PosterGrid from './PosterGrid';
 
 const API_KEY = '31abd4c5ab9b3540be79a676a989bddd';
 const MOVIE_DB_API_BASE = 'https://api.themoviedb.org/3';
@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <div>
         <NavBar title="<Hi>" />
-        <ItemGrid items={items} config={config} />
+        <PosterGrid items={items} config={config} />
       </div>
     );
   }

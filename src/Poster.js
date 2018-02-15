@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Item.css';
+import './Poster.css';
 
-const Item = props => {
+const Poster = props => {
   const { baseUrl, path, size } = props;
   const src = `${baseUrl}${size}/${path}`;
+  console.log(src);
+
   return (
     <div className="item">
-      <button className="btn-raised">
-        <img src={src} alt="" srcSet="" />
-      </button>
+      <img className="poster" src={src} alt="" srcSet="" />
     </div>
   );
 };
 
-Item.defaultProps = {
+Poster.defaultProps = {
   baseUrl: '',
   size: '',
   path: ''
 };
 
-Item.propTypes = {
+Poster.propTypes = {
   baseUrl: PropTypes.string,
   size: PropTypes.string,
   path: PropTypes.string
 };
 
-export default Item;
+export default Poster;

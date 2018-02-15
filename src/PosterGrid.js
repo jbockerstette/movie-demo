@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Item from './Item';
-import './ItemGrid.css';
+import Poster from './Poster';
+import './PosterGrid.css';
 
-const ItemGrid = props => {
+const PosterGrid = props => {
   const { items, config } = props;
   console.log(config);
   return (
     <div className="grid">
       {items.map(item => (
-        <Item
+        <Poster
           key={item.title}
           baseUrl={config.base_url}
           size={config.poster_sizes[0]}
@@ -23,14 +23,14 @@ const ItemGrid = props => {
 // http://image.tmdb.org/t/p/w300/qLmdjn2fv0FV2Mh4NBzMArdA0Uu.jpg
 // poster
 // http://image.tmdb.org/t/p/w92/q0R4crx2SehcEEQEkYObktdeFy.jpg
-ItemGrid.defaultProps = {
+PosterGrid.defaultProps = {
   items: [],
   config: {}
 };
 
-ItemGrid.propTypes = {
+PosterGrid.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({ title: PropTypes.string })),
   config: PropTypes.arrayOf(PropTypes.shape({ base_url: PropTypes.string }))
 };
 
-export default ItemGrid;
+export default PosterGrid;

@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import PosterGrid from './PosterGrid';
 import MovieDetail from './MovieDetail';
+import Consts from './consts';
 
-const API_KEY = '31abd4c5ab9b3540be79a676a989bddd';
-const MOVIE_DB_API_BASE = 'https://api.themoviedb.org/3';
-const configUrl = `${MOVIE_DB_API_BASE}/configuration?api_key=${API_KEY}`;
+const configUrl = `${Consts.movieDbApiBaseUrl}/configuration?api_key=${
+  Consts.apiKey
+}`;
 
 class App extends Component {
   constructor(props) {

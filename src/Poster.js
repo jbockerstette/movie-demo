@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Poster.css';
-
-const BASE_URL = 'http://image.tmdb.org/t/p/w92';
+import Consts from './consts';
 
 const Poster = props => {
   const { path, movieId } = props;
-  const src = `${BASE_URL}${path}`;
+  const src = `${Consts.baseImageUrl}${path}`;
 
   return (
     <div className="item">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import PosterGrid from './PosterGrid';
 
@@ -17,7 +18,8 @@ class App extends Component {
   componentWillMount() {
     fetch(configUrl)
       .then(response => response.json())
-      .then(({ images: config }) => this.setState({ config }));
+      .then(({ images: config }) => this.setState({ config }))
+      .catch(console.error);
   }
 
   render() {
@@ -25,10 +27,12 @@ class App extends Component {
     console.log(config);
 
     return (
-      <div>
-        <NavBar title="<Hi>" />
-        <PosterGrid />
-      </div>
+      <Router>
+        <div>
+          <NavBar title="<Hi>" />
+          <PosterGrid />
+        </div>
+      </Router>
     );
   }
 }

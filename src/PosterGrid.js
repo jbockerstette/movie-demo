@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Poster from './Poster';
+
 import './PosterGrid.css';
 
 const API_KEY = '31abd4c5ab9b3540be79a676a989bddd';
@@ -25,7 +27,9 @@ class PosterGrid extends React.Component {
     return (
       <div className="grid">
         {items.map(item => (
-          <Poster key={item.title} path={item.poster_path} movieId={item.id} />
+          <Link to={`movie/${item.id}`}>
+            <Poster key={item.title} path={item.poster_path} />
+          </Link>
         ))}
       </div>
     );

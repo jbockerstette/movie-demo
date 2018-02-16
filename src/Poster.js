@@ -5,7 +5,7 @@ import Consts from './consts';
 
 const Poster = props => {
   const { path } = props;
-  const src = `${Consts.baseImageUrl}${path}`;
+  const src = `${Consts.posterImageUrl}${path}`;
 
   return (
     <div className="item">

@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Poster.css';
 
+const BASE_URL = 'http://image.tmdb.org/t/p/w92';
+
 const Poster = props => {
-  const { baseUrl, path, size } = props;
-  const src = `${baseUrl}${size}/${path}`;
-  console.log(src);
+  const { path } = props;
+  const src = `${BASE_URL}${path}`;
 
   return (
     <div className="item">
@@ -15,14 +16,10 @@ const Poster = props => {
 };
 
 Poster.defaultProps = {
-  baseUrl: '',
-  size: '',
   path: ''
 };
 
 Poster.propTypes = {
-  baseUrl: PropTypes.string,
-  size: PropTypes.string,
   path: PropTypes.string
 };
 

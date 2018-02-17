@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Consts from './consts';
 import BackDrop from './BackDrop';
+import Poster from './Poster';
 
 class MovieDetail extends Component {
   constructor(props) {
@@ -21,7 +22,6 @@ class MovieDetail extends Component {
   }
 
   render() {
-    const { match } = this.props;
     const { movie } = this.state;
     console.log(movie);
     console.log(this.props);
@@ -29,6 +29,15 @@ class MovieDetail extends Component {
     return (
       <div>
         <BackDrop path={movie.backdrop_path} />
+
+        <span>
+          <Poster path={movie.poster_path} />
+        </span>
+        <span>
+          <h3>title</h3>
+          <h4>date</h4>
+          <h5>desc</h5>
+        </span>
       </div>
     );
   }

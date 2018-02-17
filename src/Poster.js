@@ -7,11 +7,7 @@ const Poster = props => {
   const { path } = props;
   const src = `${Consts.posterImageUrl}${path}`;
 
-  return (
-    <div className="item">
-      <img className="poster" src={src} alt="" srcSet="" />
-    </div>
-  );
+  return <img className="poster" src={src} alt="" srcSet="" />;
 };
 
 Poster.defaultProps = {

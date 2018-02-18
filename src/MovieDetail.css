@@ -7,17 +7,13 @@
   top: -32px;
 }
 .my-text {
-  padding: 8px;
   grid-area: my-text;
-}
-
-.title {
-  font-size: 1.5rem;
+  margin-left: 8px;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 32px 92px auto 32px;
+  grid-template-columns: 64px 92px auto 32px;
   grid-template-rows: auto;
   grid-template-areas:
     "back-drop back-drop back-drop back-drop"

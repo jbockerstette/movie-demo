@@ -35,9 +35,9 @@ class MovieDetail extends Component {
           <Poster path={movie.poster_path} />
         </div>
         <div className="my-text">
-          <div className="title">{movie.title}</div>
-          <div>{`Release date: ${date}`}</div>
-          <div>{movie.overview}</div>
+          <h3 className="title">{movie.title}</h3>
+          <p>{`Release date: ${date}`}</p>
+          <p>{movie.overview}</p>
         </div>
       </div>
     );

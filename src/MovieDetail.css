@@ -1,20 +1,26 @@
 .back-drop {
   grid-area: back-drop;
+  overflow: hidden;
+  /* background-color: green; */
+  
 }
 .poster1 {
   grid-area: poster1;
   position: relative;
   top: -32px;
+  /* background-color: pink; */
+  
 }
 .my-text {
   grid-area: my-text;
   margin-left: 8px;
+  /* background-color: orange; */
 }
 
 .container {
   display: grid;
   grid-template-columns: 64px 92px auto 32px;
-  grid-template-rows: auto;
+  grid-template-rows: .8fr .2fr;  /* 50% 50% wont allow the clipping to work for the back-drop  */
   grid-template-areas:
     "back-drop back-drop back-drop back-drop"
     ". poster1 my-text .";

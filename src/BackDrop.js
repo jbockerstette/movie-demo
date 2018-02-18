@@ -7,11 +7,7 @@ const BackDrop = props => {
   const { path } = props;
   const src = `${Consts.backDropImageUrl}${path}`;
 
-  return (
-    <div>
-      <img className="full-width" src={src} alt="" srcSet="" />
-    </div>
-  );
+  return <img className="full-width" src={src} alt="" srcSet="" />;
 };
 
 BackDrop.defaultProps = {

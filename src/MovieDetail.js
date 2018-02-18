@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Consts from './consts';
 import BackDrop from './BackDrop';
 import Poster from './Poster';
+import './MovieDetail.css';
 
 class MovieDetail extends Component {
   constructor(props) {
@@ -23,21 +24,21 @@ class MovieDetail extends Component {
 
   render() {
     const { movie } = this.state;
-    console.log(movie);
-    console.log(this.props);
+    const date = new Date(movie.release_date).toLocaleDateString('en-US');
 
     return (
-      <div>
-        <BackDrop path={movie.backdrop_path} />
-
-        <span>
+      <div className="container">
+        <div className="back-drop">
+          <BackDrop path={movie.backdrop_path} />
+        </div>
+        <div className="poster1">
           <Poster path={movie.poster_path} />
-        </span>
-        <span>
-          <h3>title</h3>
-          <h4>date</h4>
-          <h5>desc</h5>
-        </span>
+        </div>
+        <div className="my-text">
+          <div className="title">{movie.title}</div>
+          <div>{`Release date: ${date}`}</div>
+          <div>{movie.overview}</div>
+        </div>
       </div>
     );
   }

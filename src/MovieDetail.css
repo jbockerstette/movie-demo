@@ -1,0 +1,26 @@
+.back-drop {
+  grid-area: back-drop;
+}
+.poster1 {
+  grid-area: poster1;
+  position: relative;
+  top: -32px;
+}
+.my-text {
+  padding: 8px;
+  grid-area: my-text;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 32px 92px auto 32px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "back-drop back-drop back-drop back-drop"
+    ". poster1 my-text .";
+  justify-content: start;
+}

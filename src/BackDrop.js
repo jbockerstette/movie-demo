@@ -9,7 +9,7 @@ const BackDrop = props => {
 
   return (
     <div>
-      <img className="back-drop" src={src} alt="" srcSet="" />
+      <img className="full-width" src={src} alt="" srcSet="" />
     </div>
   );
 };

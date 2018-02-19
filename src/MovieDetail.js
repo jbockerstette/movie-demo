@@ -20,12 +20,17 @@ class MovieDetail extends Component {
       }&language=en-US`
     )
       .then(response => response.json())
-      .then(movie => this.setState({ movie }));
+      .then(movie => this.setState({ movie }))
+      .catch(console.error);
   }
 
   render() {
     const { movie } = this.state;
     const date = new Date(movie.release_date).toLocaleDateString('en-US');
+    let poster = null;
+    if (movie.poster_path) {
+      poster = <Poster path={movie.poster_path} key="poster" />;
+    }
 
     return (
       <div className="container">
@@ -36,12 +41,10 @@ class MovieDetail extends Component {
           component="div"
           className="poster1"
           transitionName="anim"
-          transitionAppear
-          transitionAppearTimeout={5000}
-          transitionEnter={false}
-          transitionLeave={false}
+          transitionEnterTimeout={5000}
+          transitionLeaveTimeout={3000}
         >
-          <Poster path={movie.poster_path} />
+          {poster}
         </ReactCSSTransitionGroup>
         <div className="my-text">
           <h3 className="title">{movie.title}</h3>

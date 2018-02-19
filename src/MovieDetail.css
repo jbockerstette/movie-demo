@@ -34,3 +34,21 @@
   opacity: 2;
   transition: opacity 5s ease-in;
 }
+
+.anim-enter {
+  opacity: 0.01;
+}
+
+.anim-enter.anim-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+
+.anim-leave {
+  opacity: 1;
+}
+
+.anim-leave.anim-leave-active {
+  opacity: 0.01;
+  transition: opacity 3000ms ease-in;
+}

@@ -27,9 +27,9 @@ class PosterGrid extends React.Component {
     return (
       <div className="grid">
         {items.map(item => (
-          <div className="item">
+          <div key={item.title} className="item">
             <Link to={`movie/${item.id}`}>
-              <Poster key={item.title} path={item.poster_path} />
+              <Poster path={item.poster_path} />
             </Link>
           </div>
         ))}

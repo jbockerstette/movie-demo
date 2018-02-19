@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
 import Consts from './consts';
 import BackDrop from './BackDrop';
@@ -31,9 +32,17 @@ class MovieDetail extends Component {
         <div className="back-drop">
           <BackDrop path={movie.backdrop_path} />
         </div>
-        <div className="poster1">
+        <ReactCSSTransitionGroup
+          component="div"
+          className="poster1"
+          transitionName="anim"
+          transitionAppear
+          transitionAppearTimeout={5000}
+          transitionEnter={false}
+          transitionLeave={false}
+        >
           <Poster path={movie.poster_path} />
-        </div>
+        </ReactCSSTransitionGroup>
         <div className="my-text">
           <h3 className="title">{movie.title}</h3>
           <p>{`Release date: ${date}`}</p>

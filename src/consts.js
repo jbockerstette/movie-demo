@@ -1,7 +1,7 @@
 const API_KEY = '31abd4c5ab9b3540be79a676a989bddd';
 const MOVIE_DB_API_BASE = 'https://api.themoviedb.org/3';
-const POSTER_IMG_URL = 'http://image.tmdb.org/t/p/w92';
-const BACK_DROP_IMG_URL = 'http://image.tmdb.org/t/p/w780';
+const POSTER_IMG_URL = 'https://image.tmdb.org/t/p/w92';
+const BACK_DROP_IMG_URL = 'https://image.tmdb.org/t/p/w780';
 
 const Consts = {
   apiKey: API_KEY,

@@ -1,4 +1,5 @@
 import React from 'react';
+import Overdrive from 'react-overdrive';
 import { Link } from 'react-router-dom';
 import Poster from './Poster';
 
@@ -27,11 +28,13 @@ class PosterGrid extends React.Component {
     return (
       <div className="grid">
         {items.map(item => (
-          <div key={item.title} className="item">
-            <Link to={`movie/${item.id}`}>
-              <Poster path={item.poster_path} />
-            </Link>
-          </div>
+          <Overdrive key={item.title} id={item.id.toString()}>
+            <div className="item">
+              <Link to={`movie/${item.id}`}>
+                <Poster path={item.poster_path} />
+              </Link>
+            </div>
+          </Overdrive>
         ))}
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
+import Overdrive from 'react-overdrive';
 import Consts from './consts';
 import BackDrop from './BackDrop';
 import Poster from './Poster';
@@ -9,7 +9,10 @@ import './MovieDetail.css';
 class MovieDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = { movie: {} };
+    this.state = {
+      movie: {},
+      loading: true
+    };
   }
 
   componentWillMount() {
@@ -20,32 +23,24 @@ class MovieDetail extends Component {
       }&language=en-US`
     )
       .then(response => response.json())
-      .then(movie => this.setState({ movie }))
+      .then(movie => this.setState({ movie, loading: false }))
       .catch(console.error);
   }
 
   render() {
-    const { movie } = this.state;
+    const { movie, loading } = this.state;
+    const { match } = this.props;
     const date = new Date(movie.release_date).toLocaleDateString('en-US');
-    let poster = null;
-    if (movie.poster_path) {
-      poster = <Poster path={movie.poster_path} key="poster" />;
-    }
+    if (loading) return null;
 
     return (
       <div className="container">
         <div className="back-drop">
           <BackDrop path={movie.backdrop_path} />
         </div>
-        <ReactCSSTransitionGroup
-          component="div"
-          className="poster1"
-          transitionName="anim"
-          transitionEnterTimeout={5000}
-          transitionLeaveTimeout={3000}
-        >
-          {poster}
-        </ReactCSSTransitionGroup>
+        <Overdrive id={match.params.movieId.toString()} className="poster1">
+          <Poster path={movie.poster_path} key="poster" />
+        </Overdrive>
         <div className="my-text">
           <h3 className="title">{movie.title}</h3>
           <p>{`Release date: ${date}`}</p>

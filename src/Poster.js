@@ -7,6 +7,7 @@ const Poster = props => {
   const { path } = props;
   const src = `${Consts.posterImageUrl}${path}`;
 
+  // if (path === '') return <div className="poster">loading...</div>;
   return <img className="poster" src={src} alt="" srcSet="" />;
 };
 

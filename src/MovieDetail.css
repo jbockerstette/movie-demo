@@ -2,14 +2,12 @@
   grid-area: back-drop;
   overflow: hidden;
   /* background-color: green; */
-  
 }
 .poster1 {
   grid-area: poster1;
   position: relative;
   top: -32px;
   /* background-color: pink; */
-  
 }
 .my-text {
   grid-area: my-text;
@@ -20,35 +18,9 @@
 .container {
   display: grid;
   grid-template-columns: 64px 92px auto 32px;
-  grid-template-rows: .8fr .2fr;  /* 50% 50% wont allow the clipping to work for the back-drop  */
+  grid-template-rows: 0.8fr 0.2fr; /* 50% 50% wont allow the clipping to work for the back-drop  */
   grid-template-areas:
     "back-drop back-drop back-drop back-drop"
     ". poster1 my-text .";
   justify-content: start;
-}
-.anim-appear {  
-  opacity: 0.01;
-}
- 
-.anim-appear.anim-appear-active{
-  opacity: 2;
-  transition: opacity 5s ease-in;
-}
-
-.anim-enter {
-  opacity: 0.01;
-}
-
-.anim-enter.anim-enter-active {
-  opacity: 1;
-  transition: opacity 5000ms ease-in;
-}
-
-.anim-leave {
-  opacity: 1;
-}
-
-.anim-leave.anim-leave-active {
-  opacity: 0.01;
-  transition: opacity 3000ms ease-in;
 }
